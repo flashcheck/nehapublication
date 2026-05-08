@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-    <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'../connect.facebook.net/en_US/fbevents.js');
-fbq('init', '976048234818689');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
-/></noscript>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,49 +74,25 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
         });
         // Keyboard Shortcuts Block
         document.onkeydown = function (e) {
-            // F12
-            if (e.keyCode == 123) {
-                return false;
-            }
-            // Ctrl+U
-            if (e.ctrlKey && e.keyCode == 85) {
-                return false;
-            }
-            // Ctrl+C
-            if (e.ctrlKey && e.keyCode == 67) {
-                return false;
-            }
-            // Ctrl+S
-            if (e.ctrlKey && e.keyCode == 83) {
-                return false;
-            }
-            // Ctrl+Shift+I
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-                return false;
-            }
+            if (e.keyCode == 123) return false;
+            if (e.ctrlKey && e.keyCode == 85) return false;
+            if (e.ctrlKey && e.keyCode == 67) return false;
+            if (e.ctrlKey && e.keyCode == 83) return false;
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
         };
-    </script>
-    <script>
         document.addEventListener("dragstart", function (e) {
             e.preventDefault();
         });
     </script>
     <style>
         @keyframes scrollUp {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(-50%);
-            }
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
         }
         .animate-scroll {
             animation: scrollUp 85s linear infinite;
         }
-    </style>
-    <style>
-        html,
-        body {
+        html, body {
             height: 100%;
             user-select: none;
         }
@@ -143,13 +105,10 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             background-repeat: no-repeat;
             background-position: center;
             background-size: 25% auto;
-            /* width control */
             z-index: -2;
         }
         @media (max-width: 450px) {
-            body::before {
-                background-size: 80% auto;
-            }
+            body::before { background-size: 80% auto; }
         }
         /* white overlay with opacity */
         body::after {
@@ -157,10 +116,8 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             position: fixed;
             inset: 0;
             background-color: rgba(255, 255, 255, 0.6);
-            /* 👈 opacity yahan */
             z-index: -1;
         }
-        /* Only items with 'reveal' will wait to animate on scroll */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -170,16 +127,9 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             opacity: 1;
             transform: translateY(0);
         }
-        /* Hero Animation - Loads immediately */
         @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.98);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
         }
         .animate-hero {
             animation: fadeInScale 0.8s ease-out forwards;
@@ -189,53 +139,28 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
-        .page-section {
-            display: none;
-        }
-        .page-section.active {
-            display: block;
-        }
+        .page-section { display: none; }
+        .page-section.active { display: block; }
         .m3-shadow {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 10px 40px rgba(99, 102, 241, 0.05);
         }
-        .step-blob {
-            border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%;
-        }
-        /* Pulse for trust */
+        .step-blob { border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%; }
         .trust-pulse {
             box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
             animation: pulse-green 2s infinite;
         }
         @keyframes pulse-green {
-            0% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-            }
-            70% {
-                transform: scale(1);
-                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
-            }
-            100% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
-            }
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 10px;
-        }
-        /* Smart Form Validation */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         input:not(:placeholder-shown):invalid, 
         textarea:not(:placeholder-shown):invalid { 
             outline: none; 
             border-color: #e53935 !important; 
         }
-    </style>
-    <style>
-        /* Grid images */
         .iso-img {
             width: 100%;
             border-radius: 12px;
@@ -246,7 +171,6 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             transform: scale(1.05);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
-        /* Modal background */
         .image-modal {
             position: fixed;
             inset: 0;
@@ -259,13 +183,11 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             pointer-events: none;
             transition: background 0.3s ease, opacity 0.3s ease;
         }
-        /* Modal active */
         .image-modal.active {
             background: rgba(0, 0, 0, 0.85);
             opacity: 1;
             pointer-events: auto;
         }
-        /* Modal image */
         .image-modal img {
             max-width: 90%;
             max-height: 90%;
@@ -274,15 +196,29 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             opacity: 0;
             transition: transform 0.35s ease, opacity 0.35s ease;
         }
-        /* Image animation active */
         .image-modal.active img {
             transform: scale(1);
             opacity: 1;
         }
+        /* Profile Avatar Styling */
+        .premium-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+            border: 2px solid white;
+            flex-shrink: 0;
+        }
     </style>
 </head>
-<body
-    class="font-sans text-slate-800 bg-background flex flex-col min-h-screen selection:bg-accent selection:text-white">
+<body class="font-sans text-slate-800 bg-background flex flex-col min-h-screen selection:bg-accent selection:text-white">
     <nav class="fixed w-full z-50 glass-nav h-20">
         <div class="w-full mx-auto px-4 h-full flex justify-between items-center bg-blue-900">
             <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
@@ -290,9 +226,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                     <img src="image/nehabooklogo.png" alt="">
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-[8px] uppercase tracking-widest text-accent font-black">Govt. Of India, Verified
-                        Work From
-                        Home</span>
+                    <span class="text-[8px] uppercase tracking-widest text-accent font-black">Govt. Of India, Verified Work From Home</span>
                 </div>
                 <div class="w-8 h-8  flex items-center justify-center">
                     <img src="image/mannubhai.png" alt="">
@@ -300,12 +234,9 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             </div>
             <div class="hidden md:flex items-center gap-6">
                 <button onclick="showPage('home')" class="text-md font-bold text-white hover:text-primary">Home</button>
-                <button onclick="showPage('project-plans')"
-                    class="text-md font-bold text-white hover:text-primary">Projects</button>
-                <button onclick="showPage('contact')"
-                    class="text-md font-bold text-white hover:text-primary">Help</button>
-                <button id="language-toggle"
-                    class="bg-rose px-4 py-2 rounded-xl text-[9px] font-black text-accent border border-pink-100 uppercase">
+                <button onclick="showPage('project-plans')" class="text-md font-bold text-white hover:text-primary">Projects</button>
+                <button onclick="showPage('contact')" class="text-md font-bold text-white hover:text-primary">Help</button>
+                <button id="language-toggle" class="bg-rose px-4 py-2 rounded-xl text-[9px] font-black text-accent border border-pink-100 uppercase">
                     <span data-lang="en">EN</span>
                     <span data-lang="ml" style="display:none">ML</span>
                     <span data-lang="hi" style="display:none">HI</span>
@@ -324,12 +255,9 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             <button onclick="toggleMobileMenu()" class="text-2xl text-slate-400"><i class="fas fa-times"></i></button>
         </div>
         <div class="flex flex-col gap-2">
-            <button onclick="showPage('home'); toggleMobileMenu()"
-                class="text-sm font-extrabold text-slate-900 text-left py-2"><i class="fa-solid fa-house text-lg mr-2 text-black"></i> Home</button>
-            <button onclick="showPage('project-plans'); toggleMobileMenu()"
-                class="text-sm font-extrabold text-slate-900 text-left py-2"><i class="fa-solid fa-book text-lg mr-2 text-black"></i> Projects</button>
-            <button onclick="showPage('contact'); toggleMobileMenu()"
-                class="text-sm font-extrabold text-accent text-left py-2"><i class="fa-solid fa-headset text-lg mr-2"></i> Help</button>
+            <button onclick="showPage('home'); toggleMobileMenu()" class="text-sm font-extrabold text-slate-900 text-left py-2"><i class="fa-solid fa-house text-lg mr-2 text-black"></i> Home</button>
+            <button onclick="showPage('project-plans'); toggleMobileMenu()" class="text-sm font-extrabold text-slate-900 text-left py-2"><i class="fa-solid fa-book text-lg mr-2 text-black"></i> Projects</button>
+            <button onclick="showPage('contact'); toggleMobileMenu()" class="text-sm font-extrabold text-accent text-left py-2"><i class="fa-solid fa-headset text-lg mr-2"></i> Help</button>
         </div>
     </div>
     <main class="flex-grow">
@@ -337,8 +265,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             <section class="pt-32 pb-16 lg:pt-48 lg:pb-32 animate-hero">
                 <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
                     <div>
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 text-green-600 text-[10px] font-black uppercase tracking-widest mb-6 border border-green-100">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 text-green-600 text-[10px] font-black uppercase tracking-widest mb-6 border border-green-100">
                             <span class="w-2 h-2 rounded-full bg-green-500 trust-pulse"></span>
                             Govt. Verified Official Platform
                         </div>
@@ -347,233 +274,118 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                         </div>
                         <div class="mb-4">
                             <h2 class="text-center text-lg font-semibold tracking-wide">
-                                <hr>
-                                GOVERNMENT OF INDIA
-                                <hr>
+                                <hr>GOVERNMENT OF INDIA<hr>
                             </h2>
-                            <h1 class="text-center text-2xl font-bold mt-2">
-                                WORK FROM HOME
-                            </h1>
+                            <h1 class="text-center text-2xl font-bold mt-2">WORK FROM HOME</h1>
                             <p class="text-lg text-slate-500 mb-10 leading-relaxed text-center font-medium">
-                                Work From Home for everyone. Write projects in books, get paid salary in advance. No
-                                experience needed.
+                                Work From Home for everyone. Write projects in books, get paid salary in advance. No experience needed.
                             </p>
                             <hr class="my-4">
                             <div class="space-y-2 text-gray-800">
-                                <div class="flex items-center">
-                                    <span class="text-blue-600 mr-2">◆</span>
-                                    <p><span class="font-semibold">Age:</span> 18+</p>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="text-blue-600 mr-2">◆</span>
-                                    <p><span class="font-semibold">Qualification:</span> 10th Pass or Above</p>
-                                </div>
+                                <div class="flex items-center"><span class="text-blue-600 mr-2">◆</span><p><span class="font-semibold">Age:</span> 18+</p></div>
+                                <div class="flex items-center"><span class="text-blue-600 mr-2">◆</span><p><span class="font-semibold">Qualification:</span> 10th Pass or Above</p></div>
                             </div>
                             <hr class="my-4">
                             <div class="space-y-2 text-gray-800">
-                                <div class="flex items-center">
-                                    <span class="mr-2">💼</span>
-                                    <p><span class="font-semibold">Part Time Income:</span> ₹15,000 – ₹18,000</p>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="mr-2">💼</span>
-                                    <p><span class="font-semibold">Full Time Income:</span> ₹24,000 – ₹28,000</p>
-                                </div>
+                                <div class="flex items-center"><span class="mr-2">💼</span><p><span class="font-semibold">Part Time Income:</span> ₹15,000 – ₹18,000</p></div>
+                                <div class="flex items-center"><span class="mr-2">💼</span><p><span class="font-semibold">Full Time Income:</span> ₹24,000 – ₹28,000</p></div>
                             </div>
                             <hr class="my-4">
                             <div class="space-y-1 text-gray-700">
-                                <div class="flex items-center">
-                                    <span class="text-yellow-500 mr-2">✨</span>
-                                    <p>Start Earning From Home</p>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="text-yellow-500 mr-2">✨</span>
-                                    <p>Flexible Work Opportunity</p>
-                                </div>
+                                <div class="flex items-center"><span class="text-yellow-500 mr-2">✨</span><p>Start Earning From Home</p></div>
+                                <div class="flex items-center"><span class="text-yellow-500 mr-2">✨</span><p>Flexible Work Opportunity</p></div>
                             </div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="showPage('project-plans')"
-                                class="px-10 py-5 bg-primary text-white font-bold rounded-2xl hover:bg-indigo-700 shadow-xl transition-all">
-                                Apply Job
-                            </button>
-                            <button onclick="showPage('contact')"
-                                class="px-10 py-5 bg-white text-slate-900 border border-slate-200 font-bold rounded-2xl">
-                                Customer Helpline
-                            </button>
+                            <button onclick="showPage('project-plans')" class="px-10 py-5 bg-primary text-white font-bold rounded-2xl hover:bg-indigo-700 shadow-xl transition-all">Apply Job</button>
+                            <button onclick="showPage('contact')" class="px-10 py-5 bg-white text-slate-900 border border-slate-200 font-bold rounded-2xl">Customer Helpline</button>
                         </div>
                     </div>
                     <div class="hidden lg:block">
-                        <img src="photo-1455390582262-044cdead277a-auto-format-fit-crop-w-800-q-80.jpg"
-                            class="rounded-[40px] shadow-2xl w-full h-[700px] object-cover" alt="Writing">
+                        <img src="photo-1455390582262-044cdead277a-auto-format-fit-crop-w-800-q-80.jpg" class="rounded-[40px] shadow-2xl w-full h-[700px] object-cover" alt="Writing">
                     </div>
                 </div>
             </section>
+            
             <section class="py-8 bg-gray-100">
                 <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 class="text-2xl font-bold leading-snug mb-6">
-                            Along with us, Convey Your Imagination to Your Audience!
-                            Neha Book Publication Provide a Premium Experience.
-                        </h2>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            With a proven record of generating hundreds of prosperous Publication,
-                            Neha Book Publication take delight in bringing your ideas to reality
-                            through their meticulous efforts in writing, editing, designing, and
-                            publishing your vision. Neha Book Publication is here to empower you
-                            to go through the realm of content creation with confidence.
-                        </p>
+                        <h2 class="text-2xl font-bold leading-snug mb-6">Along with us, Convey Your Imagination to Your Audience! Neha Book Publication Provide a Premium Experience.</h2>
+                        <p class="text-gray-600 text-sm leading-relaxed">With a proven record of generating hundreds of prosperous Publication, Neha Book Publication take delight in bringing your ideas to reality through their meticulous efforts in writing, editing, designing, and publishing your vision. Neha Book Publication is here to empower you to go through the realm of content creation with confidence.</p>
                     </div>
                     <div class="relative">
-                        <img src="photo-1522202176988-66273c2fd55f.jpg"
-                            class="rounded-2xl shadow-lg w-full">
-                        <div
-                            class="absolute bottom-[-20px] left-10 bg-sky-600 text-white px-8 py-5 rounded-xl shadow-lg text-center">
-                            <p class="text-xs tracking-widest">
-                                AUTHORS WITH
-                            </p>
-                            <h3 class="text-3xl font-bold">
-                                500+
-                            </h3>
-                            <p class="text-xs">
-                                BEST SELLER
-                            </p>
+                        <img src="photo-1522202176988-66273c2fd55f.jpg" class="rounded-2xl shadow-lg w-full">
+                        <div class="absolute bottom-[-20px] left-10 bg-sky-600 text-white px-8 py-5 rounded-xl shadow-lg text-center">
+                            <p class="text-xs tracking-widest">AUTHORS WITH</p>
+                            <h3 class="text-3xl font-bold">500+</h3>
+                            <p class="text-xs">BEST SELLER</p>
                         </div>
                     </div>
                 </div>
             </section>
+
             <section class="py-16 bg-gray-100">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="grid grid-cols-2 md:grid-cols-4 text-center mb-12 gap-6">
-                        <div>
-                            <h3 class="text-4xl font-bold">
-                                1540<span class="text-blue-500">+</span>
-                            </h3>
-                            <p class="text-gray-600 text-sm mt-1">Articles Published</p>
-                        </div>
-                        <div>
-                            <h3 class="text-4xl font-bold">
-                                215<span class="text-blue-500">+</span>
-                            </h3>
-                            <p class="text-gray-600 text-sm mt-1">Happy Clients</p>
-                        </div>
-                        <div>
-                            <h3 class="text-4xl font-bold">74</h3>
-                            <p class="text-gray-600 text-sm mt-1">Writer Expertise</p>
-                        </div>
-                        <div>
-                            <h3 class="text-4xl font-bold">112</h3>
-                            <p class="text-gray-600 text-sm mt-1">Awards Won</p>
-                        </div>
+                        <div><h3 class="text-4xl font-bold">1540<span class="text-blue-500">+</span></h3><p class="text-gray-600 text-sm mt-1">Articles Published</p></div>
+                        <div><h3 class="text-4xl font-bold">215<span class="text-blue-500">+</span></h3><p class="text-gray-600 text-sm mt-1">Happy Clients</p></div>
+                        <div><h3 class="text-4xl font-bold">74</h3><p class="text-gray-600 text-sm mt-1">Writer Expertise</p></div>
+                        <div><h3 class="text-4xl font-bold">112</h3><p class="text-gray-600 text-sm mt-1">Awards Won</p></div>
                     </div>
                     <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div><img src="image/seller-img.jpg" class="rounded-2xl shadow-lg w-full"></div>
                         <div>
-                            <img src="image/seller-img.jpg" class="rounded-2xl shadow-lg w-full">
-                        </div>
-                        <div>
-                            <h2 class="text-3xl font-bold mb-4">
-                                About <br> Neha Book Publication.
-                            </h2>
-                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">
-                                The term Global symbolizes intelligence, dreams, inventiveness, and progress.
-                                They inspire you to be adaptive in your life and show you the route through difficult
-                                situations.
-                            </p>
-                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">
-                                Outstanding ghostwriters at Neha Book Publication collaborate and create writing
-                                pieces
-                                that are distinguished by high-quality material.
-                            </p>
+                            <h2 class="text-3xl font-bold mb-4">About <br> Neha Book Publication.</h2>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">The term Global symbolizes intelligence, dreams, inventiveness, and progress. They inspire you to be adaptive in your life and show you the route through difficult situations.</p>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Outstanding ghostwriters at Neha Book Publication collaborate and create writing pieces that are distinguished by high-quality material.</p>
                         </div>
                     </div>
                 </div>
             </section>
+
             <section class="py-8 bg-gray-100">
                 <div class="max-w-7xl mx-auto px-6 text-center">
-                    <h2 class="text-2xl font-bold mb-4">
-                        Watch Our Video Book Trailer Successful Creations of the Company.
-                    </h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto mb-10">
-                        Neha Book Publication services include SEO writing, ghostwriting,
-                        book publishing, and video book trailers.
-                    </p>
-                    <div class="swiper bookSlider">
-                        <div class="swiper-wrapper mb-5">
-                            <div class="swiper-slide"><img src="image/books/1.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/2.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/3.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/4.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/5.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/6.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/7.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/8.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/9.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/10.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/11.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/12.png" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/13.html" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/14.html" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/15.html" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
-                            <div class="swiper-slide"><img src="image/books/16.html" class="shadow-xl rounded rotate-[-4deg] transform transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:rotate-0"></div>
+                    <h2 class="text-2xl font-bold mb-4">Watch Our Video Book Trailer Successful Creations of the Company.</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mb-10">Neha Book Publication services include SEO writing, ghostwriting, book publishing, and video book trailers.</p>
+                    <div class="swiper bookSlider p-4">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="image/books/1.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
+                            <div class="swiper-slide"><img src="image/books/2.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
+                            <div class="swiper-slide"><img src="image/books/3.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
+                            <div class="swiper-slide"><img src="image/books/4.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
+                            <div class="swiper-slide"><img src="image/books/5.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
+                            <div class="swiper-slide"><img src="image/books/6.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
+                            <div class="swiper-slide"><img src="image/books/7.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
+                            <div class="swiper-slide"><img src="image/books/8.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
                         </div>
                     </div>
                 </div>
             </section>
+            
             <script src="../cdn.jsdelivr.net/npm/swiper%4011/swiper-bundle.min.js"></script>
             <script>
+                // Updated to be a clean, continuous horizontal swipe without grid stacking
                 new Swiper(".bookSlider", {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
-                    grid: { rows: 2, fill: "row" },
+                    slidesPerView: 2,
+                    spaceBetween: 20,
                     loop: true,
-                    autoplay: { delay: 2000, disableOnInteraction: false },
+                    autoplay: { delay: 2500, disableOnInteraction: false },
                     breakpoints: {
-                        320: { slidesPerView: 2 },
+                        640: { slidesPerView: 3 },
                         768: { slidesPerView: 4 },
-                        1024: { slidesPerView: 6 }
+                        1024: { slidesPerView: 5 }
                     }
                 });
             </script>
+
             <section class="py-8 bg-gray-100">
                 <div class="max-w-7xl mx-auto px-6">
                     <h2 class="text-2xl font-bold text-center mb-12">Why Hire Us?</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="border-2 border-blue-500 rounded-lg p-6 hover:shadow-xl transition">
-                            <div class="text-blue-500 mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9" />
-                                </svg>
-                            </div>
-                            <h3 class="font-bold text-lg mb-3">Academic Authors</h3>
-                            <p class="text-gray-600 text-sm">There are many talented authors here at our company who all love to write. Many hold degrees in a variety of fields, including interventionists, CPAs, PhDs, finance, medical, engineering, and more.</p>
-                        </div>
-                        <div class="border-2 border-blue-500 rounded-lg p-6 hover:shadow-xl transition">
-                            <div class="text-blue-500 mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5h2m-1-1v2m-6 8h12" />
-                                </svg>
-                            </div>
-                            <h3 class="font-bold text-lg mb-3">No limit on modifications</h3>
-                            <p class="text-gray-600 text-sm">We have simplified the difficult book creation procedure. We offer an infinite number of modifications to guarantee the final result meets your requirements.</p>
-                        </div>
-                        <div class="border-2 border-blue-500 rounded-lg p-6 hover:shadow-xl transition">
-                            <div class="text-blue-500 mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
-                                </svg>
-                            </div>
-                            <h3 class="font-bold text-lg mb-3">Adaptive Stories</h3>
-                            <p class="text-gray-600 text-sm">Neha Book Publication hire only the top storytellers and competent subject-matter specialists for ghostwriting.</p>
-                        </div>
-                        <div class="border-2 border-blue-500 rounded-lg p-6 hover:shadow-xl transition">
-                            <div class="text-blue-500 mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                            </div>
-                            <h3 class="font-bold text-lg mb-3">Continuous Help</h3>
-                            <p class="text-gray-600 text-sm">On all days other than Sunday, a member of our support team is available to answer your call or discuss your issues with you.</p>
-                        </div>
+                        <div class="border-2 border-blue-500 rounded-lg p-6 hover:shadow-xl transition"><div class="text-blue-500 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9" /></svg></div><h3 class="font-bold text-lg mb-3">Academic Authors</h3><p class="text-gray-600 text-sm">There are many talented authors here at our company who all love to write. Many hold degrees in a variety of fields, including interventionists, CPAs, PhDs, finance, medical, engineering, and more.</p></div>
+                        <div class="border-2 border-blue-500 rounded-lg p-6 hover:shadow-xl transition"><div class="text-blue-500 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5h2m-1-1v2m-6 8h12" /></svg></div><h3 class="font-bold text-lg mb-3">No limit on modifications</h3><p class="text-gray-600 text-sm">We have simplified the difficult book creation procedure. We offer an infinite number of modifications to guarantee the final result meets your requirements.</p></div>
+                        <div class="border-2 border-blue-500 rounded-lg p-6 hover:shadow-xl transition"><div class="text-blue-500 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" /></svg></div><h3 class="font-bold text-lg mb-3">Adaptive Stories</h3><p class="text-gray-600 text-sm">Neha Book Publication hire only the top storytellers and competent subject-matter specialists for ghostwriting.</p></div>
+                        <div class="border-2 border-blue-500 rounded-lg p-6 hover:shadow-xl transition"><div class="text-blue-500 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg></div><h3 class="font-bold text-lg mb-3">Continuous Help</h3><p class="text-gray-600 text-sm">On all days other than Sunday, a member of our support team is available to answer your call or discuss your issues with you.</p></div>
                     </div>
                 </div>
             </section>
@@ -582,36 +394,11 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                     <h2 class="text-2xl font-bold text-center mb-4">What Is the Process at Neha Book Publication?</h2>
                     <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">A group of talented, knowledgeable, and skilled ghostwriters engages with us on projects. To produce the best material possible, our writers practice basic principles.</p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                        <div class="relative border-2 border-blue-500 rounded-lg p-6 bg-white">
-                            <span class="absolute right-6 top-4 text-7xl font-bold text-blue-100">01</span>
-                            <div class="text-blue-500 mb-4"><i class="text-2xl">🔍</i></div>
-                            <h3 class="font-semibold text-blue-600 mb-3">Research and Drafting Outline.</h3>
-                            <p class="text-gray-600 text-sm">Once the study is finished, the first step is to create a concept scheme.</p>
-                        </div>
-                        <div class="relative border-2 border-blue-500 rounded-lg p-6 bg-white">
-                            <span class="absolute right-6 top-4 text-7xl font-bold text-blue-100">02</span>
-                            <div class="text-blue-500 mb-4"><i class="text-2xl">💡</i></div>
-                            <h3 class="font-semibold text-blue-600 mb-3">Writing a unique article in response to an idea.</h3>
-                            <p class="text-gray-600 text-sm">Once the concept is ready for the material to be written, the ghostwriter will begin the process.</p>
-                        </div>
-                        <div class="relative border-2 border-blue-500 rounded-lg p-6 bg-white">
-                            <span class="absolute right-6 top-4 text-7xl font-bold text-blue-100">03</span>
-                            <div class="text-blue-500 mb-4"><i class="text-2xl">📄</i></div>
-                            <h3 class="font-semibold text-blue-600 mb-3">Modifying, detailed evaluation, and proofreading.</h3>
-                            <p class="text-gray-600 text-sm">Once the manuscript is approved by the client after the manuscript has gone through proofreading, writing, and editing, the format is done exclusively.</p>
-                        </div>
-                        <div class="relative border-2 border-blue-500 rounded-lg p-6 bg-white">
-                            <span class="absolute right-6 top-4 text-7xl font-bold text-blue-100">04</span>
-                            <div class="text-blue-500 mb-4"><i class="text-2xl">🎓</i></div>
-                            <h3 class="font-semibold text-blue-600 mb-3">Creating, structuring, and printing only.</h3>
-                            <p class="text-gray-600 text-sm">The format is completed solely after the customer has authorized the document following its proofreading, authoring, and editing stages.</p>
-                        </div>
-                        <div class="relative border-2 border-blue-500 rounded-lg p-6 bg-white">
-                            <span class="absolute right-6 top-4 text-7xl font-bold text-blue-100">05</span>
-                            <div class="text-blue-500 mb-4"><i class="text-2xl">✈️</i></div>
-                            <h3 class="font-semibold text-blue-600 mb-3">Promotions, Publishing, Branding, And Marketing.</h3>
-                            <p class="text-gray-600 text-sm">Once the manuscript is finalized, the eBook gets published after it is published according to the format.</p>
-                        </div>
+                        <div class="relative border-2 border-blue-500 rounded-lg p-6 bg-white"><span class="absolute right-6 top-4 text-7xl font-bold text-blue-100">01</span><div class="text-blue-500 mb-4"><i class="text-2xl">🔍</i></div><h3 class="font-semibold text-blue-600 mb-3">Research and Drafting Outline.</h3><p class="text-gray-600 text-sm">Once the study is finished, the first step is to create a concept scheme.</p></div>
+                        <div class="relative border-2 border-blue-500 rounded-lg p-6 bg-white"><span class="absolute right-6 top-4 text-7xl font-bold text-blue-100">02</span><div class="text-blue-500 mb-4"><i class="text-2xl">💡</i></div><h3 class="font-semibold text-blue-600 mb-3">Writing a unique article in response to an idea.</h3><p class="text-gray-600 text-sm">Once the concept is ready for the material to be written, the ghostwriter will begin the process.</p></div>
+                        <div class="relative border-2 border-blue-500 rounded-lg p-6 bg-white"><span class="absolute right-6 top-4 text-7xl font-bold text-blue-100">03</span><div class="text-blue-500 mb-4"><i class="text-2xl">📄</i></div><h3 class="font-semibold text-blue-600 mb-3">Modifying, detailed evaluation, and proofreading.</h3><p class="text-gray-600 text-sm">Once the manuscript is approved by the client after the manuscript has gone through proofreading, writing, and editing, the format is done exclusively.</p></div>
+                        <div class="relative border-2 border-blue-500 rounded-lg p-6 bg-white"><span class="absolute right-6 top-4 text-7xl font-bold text-blue-100">04</span><div class="text-blue-500 mb-4"><i class="text-2xl">🎓</i></div><h3 class="font-semibold text-blue-600 mb-3">Creating, structuring, and printing only.</h3><p class="text-gray-600 text-sm">The format is completed solely after the customer has authorized the document following its proofreading, authoring, and editing stages.</p></div>
+                        <div class="relative border-2 border-blue-500 rounded-lg p-6 bg-white"><span class="absolute right-6 top-4 text-7xl font-bold text-blue-100">05</span><div class="text-blue-500 mb-4"><i class="text-2xl">✈️</i></div><h3 class="font-semibold text-blue-600 mb-3">Promotions, Publishing, Branding, And Marketing.</h3><p class="text-gray-600 text-sm">Once the manuscript is finalized, the eBook gets published after it is published according to the format.</p></div>
                     </div>
                 </div>
             </section>
@@ -626,28 +413,18 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                     </div>
                 </div>
             </section>
+            
             <section class="py-12 bg-white/80 reveal">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                        <div class="p-6 cursor-pointer" onclick="openPointPage('secure-points')">
-                            <i class="fas fa-shield-halved text-primary text-3xl mb-3"></i>
-                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">100% Secure</p>
-                        </div>
-                        <div class="p-6 cursor-pointer" onclick="openPointPage('refund-points')">
-                            <i class="fas fa-rotate-left text-accent text-3xl mb-3"></i>
-                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Full Refund</p>
-                        </div>
-                        <div class="p-6 cursor-pointer" onclick="openPointPage('iso-points')">
-                            <i class="fas fa-certificate text-green-500 text-3xl mb-3"></i>
-                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">ISO Certified</p>
-                        </div>
-                        <div class="p-6 border-l border-slate-50 cursor-pointer" onclick="showPage('contact')">
-                            <i class="fas fa-user-check text-indigo-400 text-3xl mb-3"></i>
-                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Live Artist Support</p>
-                        </div>
+                        <div class="p-6 cursor-pointer" onclick="openPointPage('secure-points')"><i class="fas fa-shield-halved text-primary text-3xl mb-3"></i><p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">100% Secure</p></div>
+                        <div class="p-6 cursor-pointer" onclick="openPointPage('refund-points')"><i class="fas fa-rotate-left text-accent text-3xl mb-3"></i><p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Full Refund</p></div>
+                        <div class="p-6 cursor-pointer" onclick="openPointPage('iso-points')"><i class="fas fa-certificate text-green-500 text-3xl mb-3"></i><p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">ISO Certified</p></div>
+                        <div class="p-6 border-l border-slate-50 cursor-pointer" onclick="showPage('contact')"><i class="fas fa-user-check text-indigo-400 text-3xl mb-3"></i><p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Live Artist Support</p></div>
                     </div>
                 </div>
             </section>
+
             <section class="py-16 bg-gradient-to-b from-gray-200 to-gray-400 overflow-hidden">
                 <div class="max-w-3xl mx-auto px-6">
                     <div class="relative h-[550px] overflow-hidden">
@@ -655,30 +432,20 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                     </div>
                 </div>
             </section>
+
             <section class="py-24 bg-rose/30 reveal">
                 <div class="max-w-7xl mx-auto px-6 text-center">
                     <h2 class="text-4xl font-serif font-medium text-slate-900 mb-4">3 Simple Steps</h2>
                     <p class="text-slate-500 mb-16">How it works</p>
                     <div class="grid md:grid-cols-3 gap-12">
-                        <div class="flex flex-col items-center">
-                            <button onclick="showPage('project-plans')" class="w-16 h-16 bg-white text-accent flex items-center justify-center text-xl mb-6 step-blob shadow-md font-black">1</button>
-                            <h3 class="text-xl font-black text-slate-900 mb-3">Choose Project</h3>
-                            <p class="text-slate-500 text-sm">Pick a plan. Pay the entry fee (Refunded later).</p>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-white text-primary flex items-center justify-center text-xl mb-6 step-blob shadow-md font-black">2</div>
-                            <h3 class="text-xl font-black text-slate-900 mb-3">Receive Kit</h3>
-                            <p class="text-slate-500 text-sm">Get books and pens. Get 50% salary in advance.</p>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-white text-green-500 flex items-center justify-center text-xl mb-6 step-blob shadow-md font-black">3</div>
-                            <h3 class="text-xl font-black text-slate-900 mb-3">Write & Earn</h3>
-                            <p class="text-slate-500 text-sm">Write the project and get remaining money.</p>
-                        </div>
+                        <div class="flex flex-col items-center"><button onclick="showPage('project-plans')" class="w-16 h-16 bg-white text-accent flex items-center justify-center text-xl mb-6 step-blob shadow-md font-black">1</button><h3 class="text-xl font-black text-slate-900 mb-3">Choose Project</h3><p class="text-slate-500 text-sm">Pick a plan. Pay the entry fee (Refunded later).</p></div>
+                        <div class="flex flex-col items-center"><div class="w-16 h-16 bg-white text-primary flex items-center justify-center text-xl mb-6 step-blob shadow-md font-black">2</div><h3 class="text-xl font-black text-slate-900 mb-3">Receive Kit</h3><p class="text-slate-500 text-sm">Get books and pens. Get 50% salary in advance.</p></div>
+                        <div class="flex flex-col items-center"><div class="w-16 h-16 bg-white text-green-500 flex items-center justify-center text-xl mb-6 step-blob shadow-md font-black">3</div><h3 class="text-xl font-black text-slate-900 mb-3">Write & Earn</h3><p class="text-slate-500 text-sm">Write the project and get remaining money.</p></div>
                     </div>
                 </div>
             </section>
         </div>
+        
         <div id="secure-points" class="page-section hidden active">
             <section class="pt-24 pb-16 lg:pt-28 lg:pb-28 animate-hero">
                 <div class="mt-4 mx-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
@@ -721,6 +488,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                 </div>
             </section>
         </div>
+        
         <div id="project-plans" class="page-section">
             <section class="pt-32 pb-24 px-6 animate-hero">
                 <div class="max-w-7xl mx-auto text-center mb-16">
@@ -765,6 +533,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                 </div>
             </section>
         </div>
+        
         <div id="payment-page" class="page-section">
             <div class="max-w-4xl mx-auto px-6 pt-32 pb-24">
                 <div class="bg-white/60 rounded-[40px] m3-shadow p-6 lg:p-12">
@@ -789,7 +558,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                         <div class="flex flex-col items-center">
                             <p class="text-[10px] font-black text-slate-400 uppercase mb-6">Scan and Pay Securely</p>
                             <div class="p-4 bg-white border-2 border-slate-100 rounded-3xl shadow-xl mb-6">
-                                <img id="dynamic-qr-image" src="#" alt="UPI QR" class="w-52 h-52 object-contain">
+                                <img id="dynamic-qr-image" src="qr.jpg" alt="UPI QR" class="w-52 h-52 object-contain">
                             </div>
                             <div class="flex gap-2 w-full mb-6">
                                 <button onclick="downloadQR()" class="flex-1 py-3 bg-slate-100 rounded-xl text-[10px] font-bold">SAVE QR</button>
@@ -801,6 +570,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                 </div>
             </div>
         </div>
+
         <div id="contact" class="page-section">
             <section class="pt-32 pb-24 px-6">
                 <div class="max-w-4xl mx-auto">
@@ -813,18 +583,20 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                             <i class="fab fa-telegram text-5xl mb-6"></i>
                             <h3 class="text-2xl font-black mb-2">Telegram Help</h3>
                             <p class="text-blue-100 mb-8 text-sm">Join for live updates and new projects.</p>
-                            <a href="https://t.me/Nehapublication1" target="_blank" class="block w-full py-4 bg-white text-[#0088cc] font-black rounded-2xl">OPEN TELEGRAM</a>
+                            <a href="https://t.me/YOUR_TELEGRAM_USERNAME_HERE" target="_blank" class="block w-full py-4 bg-white text-[#0088cc] font-black rounded-2xl">OPEN TELEGRAM</a>
                         </div>
+                        
                         <div class="bg-[#25D366]/80 text-white p-12 rounded-[50px] shadow-xl text-center">
                             <i class="fab fa-whatsapp text-5xl mb-6"></i>
                             <h3 class="text-2xl font-black mb-2">WhatsApp Help</h3>
                             <p class="text-green-100 mb-8 text-sm">Direct chat for payment verification.</p>
-                            <a href="index2.html" target="_blank" class="block w-full py-4 bg-white text-[#25D366] font-black rounded-2xl">START CHAT</a>
+                            <a href="https://wa.me/YOUR_WHATSAPP_NUMBER_HERE" target="_blank" class="block w-full py-4 bg-white text-[#25D366] font-black rounded-2xl">START CHAT</a>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
+        
         <div id="delivery-section" class="page-section">
             <div class="max-w-2xl mx-auto px-6 pt-32 pb-24">
                 <div class="bg-white/60 rounded-[40px] m3-shadow p-10">
@@ -856,6 +628,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202041.08389221638!2d72.87835265000001!3d19.081507449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e1!3m2!1sen!2sin!4v1775471515551!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </main>
+    
     <footer class="bg-white py-12 px-6 border-t border-slate-100">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-slate-400">
             <div><img src="image/stiyamav%20jaite.png" class=" w-full h-[100px] object-cover" alt="Writing"></div>
@@ -867,6 +640,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             </div>
         </div>
     </footer>
+    
     <div id="verification-modal" class="fixed inset-0 bg-slate-900/90 backdrop-blur-xl z-[200] hidden items-center justify-center p-6">
         <div class="bg-white rounded-[40px] max-w-sm w-full p-10 text-center">
             <i class="fas fa-shield-check text-accent text-4xl mb-6"></i>
@@ -876,8 +650,8 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             <button onclick="closeModal()" class="w-full py-4 text-slate-400 font-bold text-xs mt-2">CANCEL</button>
         </div>
     </div>
+    
     <script>
-        // --- SCROLL ANIMATION ---
         function handleScroll() {
             const reveals = document.querySelectorAll('.reveal');
             reveals.forEach(reveal => {
@@ -890,7 +664,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             });
         }
         window.addEventListener('scroll', handleScroll);
-        // --- CORE LOGIC ---
+        
         let currentLang = localStorage.getItem('lang') || 'en';
         let upiId = '';
         const projectData = {
@@ -899,6 +673,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             3: { name: "Project 3 (180 Pages)", price: "1199", salary: "35,000" }
         };
         let currentProject = projectData[2];
+        
         document.addEventListener('DOMContentLoaded', () => {
             updateLanguage(currentLang);
             handleHashChange();
@@ -906,6 +681,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             fetchUPI(); 
             window.addEventListener('hashchange', handleHashChange);
         });
+        
         async function fetchUPI() {
             const targetBin = BIN_ID;
             const targetKey = API_KEY;
@@ -931,6 +707,7 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                 }
             }
         }
+        
         function handleHashChange() {
             const hash = window.location.hash.substring(1) || 'home';
             document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
@@ -978,8 +755,6 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             document.getElementById('pay-project-name').textContent = currentProject.name;
             document.getElementById('pay-amount').textContent = '₹' + currentProject.price;
             document.getElementById('upi-display-id').textContent = upiId;
-            const upiUrl = `upi://pay?pa=${upiId}&pn=NehaBookPublication&am=${currentProject.price}&cu=INR`;
-            // Needs exact match with your local image file!
             document.getElementById('dynamic-qr-image').src = `qr.jpg`;
         }
         async function downloadQR() {
@@ -1007,7 +782,6 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             showPage('delivery-section');
         }
         
-        // --- CHANGED TO TELEGRAM ---
         function submitDelivery(e) {
             e.preventDefault();
             const formData = {
@@ -1019,7 +793,6 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                 pincode: document.getElementById('d-pincode').value
             };
             
-            // Re-formatted plain text for URL passing
             const message = `NEHA BOOK REGISTRATION%0A` +
                 `--------------------------------%0A` +
                 `Project: ${currentProject.name}%0A` +
@@ -1030,8 +803,8 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
                 `--------------------------------%0A` +
                 `Verify my payment and send the books.`;
             
-            // Redirects to your existing Telegram Link
-            window.open(`https://t.me/Nehapublication1?text=${message}`, '_blank');
+            // FORM SUBMISSION TELEGRAM LINK HERE
+            window.open(`https://t.me/YOUR_TELEGRAM_USERNAME_HERE?text=${message}`, '_blank');
         }
     </script>
     <script>
@@ -1066,13 +839,13 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
             "Secure aur safe work from home website hai."
         ];
         const container = document.getElementById("reviewScroll");
-        function createReview(name, text, genderIndex) {
-            const gender = genderIndex % 2 === 0 ? "men" : "women";
-            const imgId = Math.floor(Math.random() * 90);
+        
+        // Updated to use a premium initial-based avatar instead of broken image links
+        function createReview(name, text) {
+            const initial = name.charAt(0).toUpperCase();
             return `
         <div class="flex items-start gap-4">
-            <img src="../randomuser.me/api/portraits/%24%7bgender%7d/%24%7bimgId%7d.html"
-                 class="w-14 h-14 rounded-full object-cover shadow-md">
+            <div class="premium-avatar">${initial}</div>
             <div>
                 <span class="bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full">
                     ${name}
@@ -1087,10 +860,9 @@ src="https://www.facebook.com/tr?id=976048234818689&ev=PageView&noscript=1"
         for (let i = 0; i < 70; i++) {
             const name = names[i % names.length];
             const review = reviewTemplates[i % reviewTemplates.length];
-            container.innerHTML += createReview(name, review, i);
+            container.innerHTML += createReview(name, review);
         }
         container.innerHTML += container.innerHTML;
     </script>
-<center><font size="2"><a href="https://www6.waybackmachinedownloader.com/website-downloader-online/scrape-all-files/">r</a></font></center></body>
-
+</body>
 </html>
