@@ -11,17 +11,19 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="npm/swiper-11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#6366f1', // Indigo
-                        rose: '#fdf2f2',   // Soft Rose
+                        primary: '#6366f1', 
+                        rose: '#fdf2f2',   
                         roseDark: '#fbcfe8',
-                        accent: '#ec4899',  // Pink
+                        accent: '#ec4899',  
                         surface: '#ffffff',
                         background: '#fcfcfd',
                     },
@@ -39,14 +41,10 @@
         }
         function handleHashChange() {
             const hash = window.location.hash.replace('#', '') || 'home';
-            // sab page sections hide
             document.querySelectorAll('.page-section').forEach(sec => {
                 sec.classList.add('hidden');
             });
-            // target page show
-            const target =
-                document.getElementById(hash) ||
-                document.getElementById('home');
+            const target = document.getElementById(hash) || document.getElementById('home');
             if (target) {
                 target.classList.remove('hidden');
             }
@@ -56,23 +54,10 @@
         window.addEventListener('load', handleHashChange);
     </script>
     <script>
-        // Right Click Disable
-        document.addEventListener("contextmenu", function (e) {
-            e.preventDefault();
-        });
-        // Text Copy Disable
-        document.addEventListener("copy", function (e) {
-            e.preventDefault();
-        });
-        // Cut Disable
-        document.addEventListener("cut", function (e) {
-            e.preventDefault();
-        });
-        // Paste Disable
-        document.addEventListener("paste", function (e) {
-            e.preventDefault();
-        });
-        // Keyboard Shortcuts Block
+        document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+        document.addEventListener("copy", function (e) { e.preventDefault(); });
+        document.addEventListener("cut", function (e) { e.preventDefault(); });
+        document.addEventListener("paste", function (e) { e.preventDefault(); });
         document.onkeydown = function (e) {
             if (e.keyCode == 123) return false;
             if (e.ctrlKey && e.keyCode == 85) return false;
@@ -80,9 +65,7 @@
             if (e.ctrlKey && e.keyCode == 83) return false;
             if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
         };
-        document.addEventListener("dragstart", function (e) {
-            e.preventDefault();
-        });
+        document.addEventListener("dragstart", function (e) { e.preventDefault(); });
     </script>
     <style>
         @keyframes scrollUp {
@@ -96,7 +79,6 @@
             height: 100%;
             user-select: none;
         }
-        /* background image */
         body::before {
             content: "";
             position: fixed;
@@ -110,7 +92,6 @@
         @media (max-width: 450px) {
             body::before { background-size: 80% auto; }
         }
-        /* white overlay with opacity */
         body::after {
             content: "";
             position: fixed;
@@ -200,7 +181,6 @@
             transform: scale(1);
             opacity: 1;
         }
-        /* Profile Avatar Styling */
         .premium-avatar {
             width: 56px;
             height: 56px;
@@ -215,6 +195,34 @@
             box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
             border: 2px solid white;
             flex-shrink: 0;
+        }
+
+        /* PREMIUM 3D BOOK SLIDER STYLES */
+        .bookSlider {
+            width: 100%;
+            padding-top: 40px;
+            padding-bottom: 50px;
+            overflow: hidden;
+        }
+        .bookSlider .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 250px; 
+            height: 350px;
+            transition: opacity 0.3s ease;
+        }
+        .bookSlider .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 3px solid white;
+        }
+        /* Make side books slightly transparent for better 3D depth */
+        .bookSlider .swiper-slide:not(.swiper-slide-active) {
+            opacity: 0.6;
         }
     </style>
 </head>
@@ -343,37 +351,46 @@
                 </div>
             </section>
 
-            <section class="py-8 bg-gray-100">
+            <section class="py-12 bg-slate-900 text-white">
                 <div class="max-w-7xl mx-auto px-6 text-center">
-                    <h2 class="text-2xl font-bold mb-4">Watch Our Video Book Trailer Successful Creations of the Company.</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto mb-10">Neha Book Publication services include SEO writing, ghostwriting, book publishing, and video book trailers.</p>
-                    <div class="swiper bookSlider p-4">
+                    <h2 class="text-3xl font-bold mb-4 text-white">Watch Our Successful Creations</h2>
+                    <p class="text-slate-300 max-w-2xl mx-auto mb-6">Swipe left or right to explore our premium book publishing and formatting portfolio.</p>
+                    
+                    <div class="swiper bookSlider">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="image/books/1.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
-                            <div class="swiper-slide"><img src="image/books/2.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
-                            <div class="swiper-slide"><img src="image/books/3.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
-                            <div class="swiper-slide"><img src="image/books/4.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
-                            <div class="swiper-slide"><img src="image/books/5.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
-                            <div class="swiper-slide"><img src="image/books/6.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
-                            <div class="swiper-slide"><img src="image/books/7.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
-                            <div class="swiper-slide"><img src="image/books/8.png" class="shadow-lg rounded transition-transform duration-300 hover:-translate-y-2"></div>
+                            <div class="swiper-slide"><img src="image/books/1.png" alt="Book 1"></div>
+                            <div class="swiper-slide"><img src="image/books/2.png" alt="Book 2"></div>
+                            <div class="swiper-slide"><img src="image/books/3.png" alt="Book 3"></div>
+                            <div class="swiper-slide"><img src="image/books/4.png" alt="Book 4"></div>
+                            <div class="swiper-slide"><img src="image/books/5.png" alt="Book 5"></div>
+                            <div class="swiper-slide"><img src="image/books/6.png" alt="Book 6"></div>
+                            <div class="swiper-slide"><img src="image/books/7.png" alt="Book 7"></div>
+                            <div class="swiper-slide"><img src="image/books/8.png" alt="Book 8"></div>
                         </div>
                     </div>
+
                 </div>
             </section>
             
-            <script src="../cdn.jsdelivr.net/npm/swiper%4011/swiper-bundle.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
             <script>
-                // Updated to be a clean, continuous horizontal swipe without grid stacking
+                // Initializing the 3D Coverflow Effect
                 new Swiper(".bookSlider", {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
+                    effect: "coverflow",
+                    grabCursor: true,
+                    centeredSlides: true,
+                    slidesPerView: "auto",
                     loop: true,
-                    autoplay: { delay: 2500, disableOnInteraction: false },
-                    breakpoints: {
-                        640: { slidesPerView: 3 },
-                        768: { slidesPerView: 4 },
-                        1024: { slidesPerView: 5 }
+                    coverflowEffect: {
+                        rotate: 20, // Angle of side books
+                        stretch: 0,
+                        depth: 250, // Push side books into background
+                        modifier: 1,
+                        slideShadows: true, // Enables actual 3D shadowing on the books
+                    },
+                    autoplay: { 
+                        delay: 2000, 
+                        disableOnInteraction: false 
                     }
                 });
             </script>
@@ -585,7 +602,6 @@
                             <p class="text-blue-100 mb-8 text-sm">Join for live updates and new projects.</p>
                             <a href="https://t.me/YOUR_TELEGRAM_USERNAME_HERE" target="_blank" class="block w-full py-4 bg-white text-[#0088cc] font-black rounded-2xl">OPEN TELEGRAM</a>
                         </div>
-                        
                         <div class="bg-[#25D366]/80 text-white p-12 rounded-[50px] shadow-xl text-center">
                             <i class="fab fa-whatsapp text-5xl mb-6"></i>
                             <h3 class="text-2xl font-black mb-2">WhatsApp Help</h3>
@@ -803,7 +819,6 @@
                 `--------------------------------%0A` +
                 `Verify my payment and send the books.`;
             
-            // FORM SUBMISSION TELEGRAM LINK HERE
             window.open(`https://t.me/YOUR_TELEGRAM_USERNAME_HERE?text=${message}`, '_blank');
         }
     </script>
@@ -840,7 +855,6 @@
         ];
         const container = document.getElementById("reviewScroll");
         
-        // Updated to use a premium initial-based avatar instead of broken image links
         function createReview(name, text) {
             const initial = name.charAt(0).toUpperCase();
             return `
